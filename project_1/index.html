@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400..900&family=Redressed&display=swap');
+    </style>
+    <style>
+        .hov {
+            background-color: rgba(0, 255, 217, 0.267);
+            cursor: pointer;
+        }
+
+        .hov:hover {
+            background-color: black;
+            color: rgb(174, 205, 50);
+        }
+
+        .wow1:active {
+            background-color: #ff004c;
+            color: #17ec5e;
+            transform: scale(0.89);
+        }
+
+        .wow2:active {
+            background-color: #a7f3d0;
+            color: #334155;
+            transform: scale(0.89);
+        }
+
+
+        /* For Chrome, Safari, Edge, Opera */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* For Firefox
+        input[type="number"] {
+            -moz-appearance: textfield;
+        } */
+    </style>
+</head>
+
+<body class="bg-black back">
+    <div class="flex justify-center items-cente pt-2">
+        <input type="button" id="butt" name="butt" value="CLick Here to Play Again!"
+            class="text-white font-bold font-mono p-2 hover:text-green-200 transition duration-300 hover:cursor-pointer hover:shadow-2xs shadow-cyan-100 hover:translate-y-px rounded-sm wow1 reset">
+    </div>
+    <div class="flex text-yellow-100 overflow-y-hidden h-4">
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    </div>
+    <div class="flex justify-center items-center">
+        <div class="text-white font-[Cinzel] px-2 py-10 sm:p-10">
+            <div class="text-[31px] sm:text-5xl text-center">Guess my number™</div>
+            <div class="text-center">Between 1 and 20</div>
+        </div>
+    </div>
+    <div class="flex justify-center items-center text-white p-5">
+        <div
+            class="w-[100px] h-[100px] rounded-full text-5xl font-[Redressed] shadow-inner shadow-yellow-100 flex justify-center items-center khamoshi">
+            ?</div>
+    </div>
+    <div class=" flex justify-center items-center p-4">
+        <div class="text-cyan-100 text-3xl font-[Redressed] prot">Let's Start GUessing...</div>
+    </div>
+    <div class="">
+        <div class="flex justify-center items-center gap-15 py-10 hitenter">
+            <input type="number" id="num" name="num" placeholder="Enter Number"
+                class="text-white h-[45px] w-[110px] flex justify-center items-center border-[1px] rounded-sm text-center border-emerald-300">
+            <input type="button" id="check" name="check" value="Check!"
+                class="text-white font-[Andika] p-2 text-2xl rounded-md transition duration-300 hov wow2">
+        </div>
+    </div>
+    <div class="p-3">
+        <div class="flex justify-center items-center text-yellow-100 font-[Andika] text-[25px]">
+            <div class="p-1">Current Score :</div>
+            <div class="p-1 score">20</div>
+        </div>
+        <div class="flex justify-center items-center text-emerald-300 font-[Andika] text-[25px]">
+            <div class="p-1">Higgest Score :</div>
+            <div class="p-1 hscore">0</div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
