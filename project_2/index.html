@@ -6,56 +6,311 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./output.css">
+    <!-- <style>
+        /* body,
+        html {
+            margin: 0;
+            height: 100%;
+        } */
+
+        /* .back {
+            height: 100vh;
+            background: linear-gradient(to bottom right,
+                    rgb(85, 252, 235),
+                    rgb(0, 180, 255),
+                    rgb(0, 100, 255),
+                    rgb(47, 0, 128),
+                    rgb(100, 0, 160),
+                    rgb(134, 0, 100),
+                    rgb(160, 0, 60),
+                    rgb(182, 73, 255));
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        } */
+
+        .back {
+            height: 100vh;
+            background: linear-gradient(135deg,
+                    rgb(85, 252, 235),
+                    rgb(0, 180, 255),
+                    rgb(0, 100, 255),
+                    rgb(47, 0, 128),
+                    rgb(100, 0, 160),
+                    rgb(134, 0, 100),
+                    rgb(160, 0, 60),
+                    rgb(182, 73, 255));
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+    </style>
+    <style>
+        body,
+        html {
+            /* margin: 0; */
+            /* height: 100%; */
+            background: black;
+        }
+
+        .rotating {
+            position: relative;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+
+        .rotating::before {
+            content: "";
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            background: linear-gradient(45deg, rgb(0, 255, 0), #f0f, #0ff, #00f);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <style>
+        /* body,
+        html {
+            margin: 0;
+            height: 100%;
+        } */
+
+        .pulse {
+            height: 100vh;
+            background: linear-gradient(to bottom right,
+                    #5ffceb, #007aff, #30007f, #7f007f, #e91e63, #ff73ff);
+            background-size: 400% 400%;
+            animation: pulseGradient 10s ease-in-out infinite;
+        }
+
+        @keyframes pulseGradient {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            25%,
+            75% {
+                filter: brightness(0.6);
+            }
+
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+    </style> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400..900&family=Redressed&display=swap');
     </style>
     <style>
-        .clickanimation {
-            cursor: pointer;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
         }
 
-        .clickanimation:active {
-            transform: scale(1.15);
+        body {
+            height: 100%;
+            width: 100%;
         }
 
-        .bgblur {
-            background-color: transparent;
+        .hue {
+            height: 100vh;
+            background: linear-gradient(to bottom right,
+                    rgb(255, 0, 102),
+                    /* Hot Pink */
+                    rgb(255, 94, 0),
+                    /* Neon Orange */
+                    rgb(255, 255, 0),
+                    /* Bright Yellow */
+                    rgb(0, 255, 0),
+                    /* Lime Green */
+                    rgb(0, 255, 255),
+                    /* Aqua */
+                    rgb(0, 128, 255),
+                    /* Vivid Blue */
+                    rgb(0, 0, 255),
+                    /* Blue */
+                    rgb(128, 0, 255),
+                    /* Violet */
+                    rgb(255, 0, 255),
+                    /* Magenta */
+                    rgb(255, 0, 180),
+                    /* Pink-Magenta */
+                    rgb(182, 73, 255),
+                    /* Lavender */
+                    rgb(160, 0, 60),
+                    /* Crimson */
+                    rgb(134, 0, 100),
+                    /* Dark Pink */
+                    rgb(100, 0, 160),
+                    /* Purple */
+                    rgb(47, 0, 128),
+                    /* Deep Violet */
+                    rgb(0, 100, 255),
+                    /* Bright Blue */
+                    rgb(0, 180, 255),
+                    /* Sky Blue */
+                    rgb(85, 252, 235),
+                    /* Turquoise */
+                    #ff73ff,
+                    /* Bright Magenta */
+                    #5ffceb
+                    /* Light Aqua */
+                );
+            background-size: 500% 500%;
+            animation: hueRotate 15s linear infinite;
+        }
+
+        @keyframes hueRotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        body .main>div {
+            font-size: 16px !important;
+        }
+
+        .fade {
+            background-color: color-mix(in oklab, var(--color-white)
+                    /* #fff = #ffffff */
+                    40%, transparent);
+            border-radius: 12px 0px 0px 12px;
+        }
+
+        .blurr {
+            background-color: color-mix(in oklab, var(--color-emerald-300)
+                    /* oklch(84.5% 0.143 164.978) = #5ee9b5 */
+                    20%, transparent);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
     </style>
 </head>
 
-<body class="relative bg-fuchsia-400">
-    <div class="flex justify-evenly items-center px-3 py-10 sm:p-10">
-        <input type="button" value="button 1"
-            class="bg-emerald-300 rounded-lg p-2 font-[Andika] transition ease-in-out duration-100 hover:bg-emerald-400 hover:text-white hover:shadow-2xl shadow-red-500 hover:scale-105 clickanimation openme">
-        <input type="button" value="button 2"
-            class="bg-emerald-300 rounded-lg p-2 font-[Andika] transition ease-in-out duration-100 hover:bg-emerald-400 hover:text-blue-100 hover:shadow-2xl shadow-red-500 hover:scale-105 clickanimation openme">
-        <input type="button" value="button 3"
-            class="bg-emerald-300 rounded-lg p-2 font-[Andika] transition ease-in-out duration-100 hover:bg-emerald-400 hover:text-orange-100 hover:shadow-2xl shadow-red-500 hover:scale-105 clickanimation openme">
-    </div>
-    <div class="hidden wow">
-        <div class="absolute top-0 bgblur h-screen w-screen z-100 clickmeback"></div>
-        <div
-            class="absolute bg-white/30 w-8/10 h-[calc(100vh-100px)] left-10/100 top-1/2 rounded-lg z-1000 backdrop-blur-sm">
-            <div class="flex justify-between m-2 p-2 items-center border-b-[1px] border-cyan-500 font-[Cinzel]">
-                <div class="text-[16px] sm:text-[21px] text-center p-2">Introduction about js functionality</div>
-                <div
-                    class="text-[12px] sm:text-[15px] p-2 hover:cursor-pointer hover:scale-110 transition ease-in-out duration-100 clickanimation clickmecross">
-                    ❌</div>
-            </div>
-            <div class="flex flex-col m-1 p-2 font-[Redressed] sm:text-2xl gap-7">
-                <div class="p-1 text-[16px] sm:text-2xl">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis obcaecati enim in rerum nam adipisci, consectetur assumenda modi ullam. Et fugiat placeat libero accusantium nisi, ducimus iste exercitationem harum blanditiis quam consectetur, porro corrupti.
-                </div>
-                <div class="flex flex-col justify-center items-center p-1 text-indigo-500 font-semibold text-shadow-white text-shadow-md">
-                    <div >Try to click Outside of this container.</div>
-                    <div>try to press Escape key.</div>
-                    <div class="flex items-center">
-                        <div>try to click</div>
-                        <div class="text-[15px] px-2">❌</div>
-                        <div>.</div>
+<body class="relative bd">
+    <div class="absolute top-0 h-screen w-screen hue z-0"></div>
+    <div class="absolute top-0 left-0 h-screen w-screen flex justify-center items-center main">
+        <div class="relative flex mt-[4px] justify-center items-center rounded-[12px] h-[85vh] w-[85vw] z-1 blurr"
+            style="font-size: 16px;">
+            <div class="fade bord h-full w-full p1">
+                <div class="flex flex-col justify-center items-center h-full w-full">
+                    <div class="relative flex justify-center items-center bg-pink-500/10 w-full"
+                        style=" padding: 15px 10px; border-radius: 12px 0px 0px 0px;">
+                        <div class="font-[Cinzel] font-semibold text-black text-shadow-2xs text-shadow-red-400 "
+                            style="font-size: 25px;">player 1</div>
+                    </div>
+                    <div class="flex flex-col justify-between items-center bg-amber-300/10 w-9/10 rounded-lg"
+                        style="margin: 18px auto; padding: 10px 5px; height:100%">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="text-orange-800 font-[Andika]" style="font-size: 40px; margin: 5px;">Score</div>
+                            <div class="font-[Redressed] text-lime-900" style="font-size: 25px; margin: 5px;" id="sc-1">
+                                999+</div>
+                        </div>
+                        <div class="flex justify-center items-center bg-emerald-300/10 w-9/10 rounded-md"
+                            style="margin: 10px auto;">
+                            <div class="font-serif font-light" style="font-size: 60px;" id="currscp1">0</div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="bord h-full w-full p2">
+                <div class="flex flex-col justify-center items-center h-full w-full">
+                    <div class="flex justify-center items-center bg-pink-500/10 font-[Cinzel] font-semibold text-blue-900 text-shadow-2xs text-shadow-red-400 w-full"
+                        style="font-size: 25px; padding: 15px 10px; border-radius: 0px 12px 0px 0px;">player 2</div>
+                    <div class="flex flex-col justify-between items-center bg-amber-300/10 w-9/10 rounded-lg"
+                        style="margin: 18px auto; padding: 10px 5px; height:100%">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="text-orange-800 font-[Andika]" style="font-size: 40px; margin: 5px;">Score</div>
+                            <div class="font-[Redressed] text-lime-900" style="font-size: 25px; margin: 5px;" id="sc-2">
+                                999+</div>
+                        </div>
+                        <div class="flex justify-center items-center bg-emerald-300/10 w-9/10 rounded-md"
+                            style="margin: 10px auto;">
+                            <div class="font-serif font-light" style="font-size: 60px;" id="currscp2">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 z-10 flex justify-center items-center"
+                style="margin-top: 4px; height: 135px; width: 85vw;">
+                <input type="button" value="🔄️ Rematch"
+                    class="bg-fuchsia-300/50 hover:bg-fuchsia-300/60 active:bg-fuchsia-300/100 rounded-md flex justify-center items-center hover:cursor-pointer transition duration-200 hover:ease-in-out text-emerald-900 font-bold font-[Redressed]"
+                    style="padding: 7px 10px; font-size: 20px;" id="rematch">
+            </div>
+            <div class="absolute top-[25vh] left-0 z-10 flex justify-center items-center"
+                style="margin-top: 4px; height: 135px; width: 85vw;">
+                <img src="./images/start.png" alt="" class="rounded-sm" id="die-image"
+                    style="height: 100px;">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e570043b-1daf-4dbd-b3f7-edae04b144cd/dh7sgtk-88849a7d-812f-4b89-94ef-3af717c3b207.png/v1/fill/w_1192,h_670/player_1_wins_logo_sprite_by_nezukorempadeviart07_dh7sgtk-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZTU3MDA0M2ItMWRhZi00ZGJkLWIzZjctZWRhZTA0YjE0NGNkXC9kaDdzZ3RrLTg4ODQ5YTdkLTgxMmYtNGI4OS05NGVmLTNhZjcxN2MzYjIwNy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.C0QzjfPz7xBB3bhJ08fMg6ZuSCcZ55UMkix5EA2Hx6o" alt="" class="rounded-sm hidden" id="win1"
+                    style="height: 100px;">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e570043b-1daf-4dbd-b3f7-edae04b144cd/dh7sgvc-2bd76695-22c4-4129-bd93-9894f5379d23.png/v1/fill/w_1192,h_670/player_2_wins_logo_sprite_by_nezukorempadeviart07_dh7sgvc-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZTU3MDA0M2ItMWRhZi00ZGJkLWIzZjctZWRhZTA0YjE0NGNkXC9kaDdzZ3ZjLTJiZDc2Njk1LTIyYzQtNDEyOS1iZDkzLTk4OTRmNTM3OWQyMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.NtF89FLm8ErpoQiQbK2pbyTYmQahQhr5owS5tytWicw" alt="" class="rounded-sm hidden" id="win2"
+                    style="height: 100px;">
+            </div>
+            <div class="absolute top-[50vh] left-0 z-10 flex justify-center items-center"
+                style="margin-top: 4px; height: 135px; width: 85vw;">
+                <input type="button" value="🎲 Roll die"
+                    class="bg-orange-300/50 hover:bg-orange-300/60 active:bg-orange-300/100 rounded-md flex justify-center items-center hover:cursor-pointer transition duration-200 hover:ease-in-out text-emerald-900 font-bold font-[Redressed]"
+                    style="padding: 7px 10px; font-size: 20px;" id="roll">
+            </div>
+            <div class="absolute top-[63vh] left-0 z-10 flex justify-center items-center"
+                style="margin-top: 4px; height: 135px; width: 85vw;">
+                <input type="button" value="🤚 Hold Score"
+                    class="bg-indigo-300/50 hover:bg-indigo-300/60 active:bg-indigo-300/100 rounded-md flex justify-center items-center hover:cursor-pointer transition duration-200 hover:ease-in-out text-emerald-900 font-bold font-[Redressed]"
+                    style="padding: 7px 10px; font-size: 20px;" id="hold">
             </div>
         </div>
     </div>
