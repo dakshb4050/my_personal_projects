@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+<head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -46,9 +46,21 @@
             -moz-appearance: textfield;
         } */
     </style>
+
+    <script>
+        function playAudioOnce() {
+            const audio = document.getElementById("myaudio");
+            audio.volume = 0.015;
+            audio.play();
+        }
+
+        ['click', 'touchstart'].forEach(eventType => {
+            window.addEventListener(eventType, playAudioOnce, { once: true });
+        });
+    </script>
 </head>
 
-<body class="bg-black back">
+<body class="relative bg-black back z-0">
     <div class="flex justify-center items-cente pt-2">
         <input type="button" id="butt" name="butt" value="CLick Here to Play Again!"
             class="text-white font-bold font-mono p-2 hover:text-green-200 transition duration-300 hover:cursor-pointer hover:shadow-2xs shadow-cyan-100 hover:translate-y-px rounded-sm wow1 reset">
@@ -89,6 +101,9 @@
         </div>
     </div>
     <script src="./script.js"></script>
+    <div class="absolute -z-30">
+        <audio src="./Sanson Ki Mala (Violin Cover)  Leo Twins  The Quarantine Sessions.mp3" loop id="myaudio"></audio>
+    </div>
 </body>
 
 </html>
