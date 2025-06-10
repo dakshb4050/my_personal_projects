@@ -51,7 +51,7 @@ document.querySelector("#check").addEventListener("click", function () {
         document.querySelector(".khamoshi").style.width='120px';
         document.querySelector(".khamoshi").style.height='120px';
         if (temp1 > temp2) {
-          document.querySelector(".hscore").textContent = temp1;
+          temp2 = document.querySelector(".hscore").textContent = temp1;
         }
         console.log(document.querySelector(".hscore").textContent);
       } else {
